@@ -1,0 +1,39 @@
+##Use these commands to exclude files from VsCode Source Control.
+
+##Immediately after downloading run the .vsCode command in the terminal, launch configurations contain keys and needs to not upload to Gitlab.
+
+##You can right click this ps1 file to run at once or copy paste each in the terminal and run. For Mac OS, I don't know how to run all at once.
+
+##If you choose to modify files and do not want them to be a part of the index for source control run the assume unchanged command.
+##To bring the file back to the index to upload to the repository use the no assume unchanged command.
+
+##The following files and commands are what you would like to not be a part of crowding up source control of vsCode and do not want sent to the repository in Gitlab.
+
+##------First Commands to Run---------------
+git update-index --assume-unchanged .vscode/launch.json
+git update-index --assume-unchanged cmd/LoginByAccountIDDEV/loginByAccountIDDEV.go
+git update-index --assume-unchanged cmd/LoginByAccountIDPRD/loginByAccountIDPRD.go
+git update-index --assume-unchanged cmd/runSingleTest/runSingleTest.go
+git update-index --assume-unchanged cmd/testCodeMain/testCodeMain.go
+git update-index --assume-unchanged config/argsAfterEnv.json
+git update-index --assume-unchanged testData/testCaseFiles/nonRegressionTestCORShtml.html
+
+git update-index --no-assume-unchanged cmd/LoginByAccountIDDEV/loginByAccountIDDEV.go
+git update-index --no-assume-unchanged cmd/LoginByAccountIDPRD/loginByAccountIDPRD.go
+git update-index --no-assume-unchanged cmd/runSingleTest/runSingleTest.go
+
+
+
+
+
+
+
+
+
+
+
+
+##------.vsCode--------------
+git update-index --no-assume-unchanged .vscode/launch.json
+
+

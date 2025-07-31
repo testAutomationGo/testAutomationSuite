@@ -1,0 +1,55 @@
+services:
+  test-automation:
+    image: test-runner
+    env_file: 
+      - testData/accounts/.env
+    environment:
+      - VAR1=${GMAIL}
+      - VAR2=${NOTION}
+      - VAR3=${SLACK_TOKEN}
+      - VAR4=${RUN_ID}
+      - DEV1=${DEV1}
+      - DEV2=${DEV2}
+      - DEV3=${DEV3}
+      - DEV4=${DEV4}
+      - DEV5=${DEV5}
+      - DEV6=${DEV6}
+      - DEV7=${DEV7}
+      - DEV8=${DEV8}
+      - DEV9=${DEV9}
+      - DEV10=${DEV10}
+      - DEV11=${DEV11}
+      - DEV12=${DEV12}
+      - DEV13=${DEV13}
+      - DEV14=${DEV14}
+      - DEV15=${DEV15}
+      - DEV16=${DEV16}
+      - DEV17=${DEV17}
+      - DEV18=${DEV18}
+      - DEV19=${DEV19}
+      - DEV20=${DEV20}
+      - DEV21=${DEV21}
+      - DEV22=${DEV22}
+      - DEV23=${DEV23}
+      - DEV24=${DEV24}
+      - DEV25=${DEV25}
+      - DEV26=${DEV26}
+      - DEV27=${DEV27}
+      - DEV28=${DEV28}
+      - DEV29=${DEV29}
+      - DEV30=${DEV30}
+      - DEV31=${DEV31}
+      - DEV32=${DEV32}
+      - DEV33=${DEV33}
+      - DEV34=${DEV34}
+      - DEV35=${DEV35}
+      - DEV36=${DEV36}
+      - DEV37=${DEV37}
+      - DEV38=${DEV38}
+      - DEV39=${DEV39}
+      - DEV40=${DEV40}
+      - DEV41=${DEV41}
+      - DEV42=${DEV42}
+      - DEV43=${DEV43}
+      - DEV44=${DEV44}
+    command: ["develop1", "${GMAIL}", "${NOTION}", "${SLACK_TOKEN}", "${RUN_ID}", "${DEV1}", "${DEV2}", "${DEV3}", "${DEV4}", "${DEV5}", "${DEV6}", "${DEV7}", "${DEV8}", "${DEV9}", "${DEV10}", "${DEV11}", "${DEV12}", "${DEV13}", "${DEV14}", "${DEV15}", "${DEV16}", "${DEV17}", "${DEV18}", "${DEV19}", "${DEV20}", "${DEV21}", "${DEV22}", "${DEV23}", "${DEV24}", "${DEV25}", "${DEV26}", "${DEV27}", "${DEV28}", "${DEV29}", "${DEV30}", "${DEV31}", "${DEV32}", "${DEV33}", "${DEV34}", "${DEV35}", "${DEV36}", "${DEV37}", "${DEV38}", "${DEV39}", "${DEV40}", "${DEV41}", "${DEV42}", "${DEV43}", "${DEV44}", "All"]
