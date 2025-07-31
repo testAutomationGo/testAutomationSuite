@@ -1,0 +1,223 @@
+2025/07/27 10:02:44 Launching Testing App
+2025/07/27 10:02:44 Environment options loaded: develop
+2025/07/27 10:09:53 Config File: productionConfigRunner.json
+2025/07/27 10:15:03 Rebuilding the app.
+2025/07/27 10:15:06 Build String: Desktop app rebuilt successfully.
+2025/07/27 10:15:08 Launching Testing App
+2025/07/27 10:15:08 Environment options loaded: develop
+2025/07/27 10:15:25 Config File: developConfigRunner.json
+2025/07/27 10:15:29 Config File: productionConfigRunner.json
+2025/07/27 10:25:47 Rebuilding the app.
+2025/07/27 10:25:48 Failed to build the desktop app: exit status 1
+2025/07/27 10:25:55 Launching Testing App
+2025/07/27 10:25:55 Environment options loaded: develop
+2025/07/27 10:25:59 Rebuilding the app.
+2025/07/27 10:25:59 Failed to build the desktop app: exit status 1
+2025/07/27 10:29:53 Launching Testing App
+2025/07/27 10:29:53 Environment options loaded: develop
+2025/07/27 10:29:57 Rebuilding the app.
+2025/07/27 10:29:59 Build String: Desktop app rebuilt successfully.
+2025/07/27 10:30:01 Launching Testing App
+2025/07/27 10:30:01 Environment options loaded: develop
+2025/07/27 10:30:10 Config File: developConfigRunner.json
+2025/07/27 10:30:15 Config File: productionConfigRunner.json
+2025/07/27 10:32:31 Rebuilding the app.
+2025/07/27 10:32:33 Build String: Desktop app rebuilt successfully.
+2025/07/27 10:32:35 Launching Testing App
+2025/07/27 10:32:35 Environment options loaded: develop
+2025/07/27 10:32:48 Config File: productionConfigRunner.json
+2025/07/27 11:20:05 Rebuilding the app.
+2025/07/27 11:20:07 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:20:12 Launching Testing App
+2025/07/27 11:20:12 Environment options loaded: develop
+2025/07/27 11:20:49 Config File: productionConfigRunner.json
+2025/07/27 11:21:28 File does not exist:  CreateFile C:\Users\markm\Documents\jobHunt\github\testAutomationSuiteGO\testAutomationSuiteGO/resultsArchive/PRD_20250727112049011/executive_summary.html: The system cannot find the file specified.
+2025/07/27 11:24:55 Rebuilding the app.
+2025/07/27 11:24:57 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:25:11 Launching Testing App
+2025/07/27 11:25:11 Environment options loaded: develop
+2025/07/27 11:25:13 Rebuilding the app.
+2025/07/27 11:25:15 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:25:20 Launching Testing App
+2025/07/27 11:25:20 Environment options loaded: develop
+2025/07/27 11:25:34 Config File: productionConfigRunner.json
+2025/07/27 11:27:58 Rebuilding the app.
+2025/07/27 11:28:00 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:28:58 Launching Testing App
+2025/07/27 11:28:58 Environment options loaded: develop
+2025/07/27 11:29:00 Rebuilding the app.
+2025/07/27 11:29:02 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:29:07 Launching Testing App
+2025/07/27 11:29:07 Environment options loaded: develop
+2025/07/27 11:29:18 Config File: developConfigRunner.json
+2025/07/27 11:29:23 Config File: productionConfigRunner.json
+2025/07/27 11:35:29 Rebuilding the app.
+2025/07/27 11:35:31 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:54:33 Launching Testing App
+2025/07/27 11:54:33 Environment options loaded: develop
+2025/07/27 11:54:39 Rebuilding the app.
+2025/07/27 11:54:41 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:54:43 Launching Testing App
+2025/07/27 11:54:43 Environment options loaded: develop
+2025/07/27 11:54:53 Config File: developConfigRunner.json
+2025/07/27 11:55:07 Config File: productionConfigRunner.json
+2025/07/27 11:55:45 Rebuilding the app.
+2025/07/27 11:55:47 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:55:49 Launching Testing App
+2025/07/27 11:55:49 Environment options loaded: develop
+2025/07/27 11:56:04 Config File: productionConfigRunner.json
+2025/07/27 11:58:35 Rebuilding the app.
+2025/07/27 11:58:37 Build String: Desktop app rebuilt successfully.
+2025/07/27 11:58:39 Launching Testing App
+2025/07/27 11:58:39 Environment options loaded: develop
+2025/07/27 11:58:55 Config File: productionConfigRunner.json
+2025/07/27 12:00:40 Rebuilding the app.
+2025/07/27 12:00:42 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:00:44 Launching Testing App
+2025/07/27 12:00:44 Environment options loaded: develop
+2025/07/27 12:00:58 Config File: productionConfigRunner.json
+2025/07/27 12:01:43 Rebuilding the app.
+2025/07/27 12:01:45 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:01:47 Launching Testing App
+2025/07/27 12:01:47 Environment options loaded: develop
+2025/07/27 12:02:04 Config File: productionConfigRunner.json
+2025/07/27 12:02:23 Rebuilding the app.
+2025/07/27 12:02:25 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:02:27 Launching Testing App
+2025/07/27 12:02:27 Environment options loaded: develop
+2025/07/27 12:02:48 Config File: productionConfigRunner.json
+2025/07/27 12:06:02 Rebuilding the app.
+2025/07/27 12:06:04 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:06:05 Launching Testing App
+2025/07/27 12:06:05 Environment options loaded: develop
+2025/07/27 12:08:37 Config File: developConfigRunner.json
+2025/07/27 12:08:43 Config File: productionConfigRunner.json
+2025/07/27 12:17:20 json: cannot unmarshal array into Go value of type testsUI.RootObject
+2025/07/27 12:17:22 Launching Testing App
+2025/07/27 12:17:22 Environment options loaded: develop
+2025/07/27 12:18:04 Rebuilding the app.
+2025/07/27 12:18:05 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:18:08 Launching Testing App
+2025/07/27 12:18:08 Environment options loaded: develop
+2025/07/27 12:18:33 Rebuilding the app.
+2025/07/27 12:18:35 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:18:37 Launching Testing App
+2025/07/27 12:18:37 Environment options loaded: develop
+2025/07/27 12:19:41 Rebuilding the app.
+2025/07/27 12:19:43 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:19:44 Launching Testing App
+2025/07/27 12:19:44 Environment options loaded: develop
+2025/07/27 12:19:57 Config File: developConfigRunner.json
+2025/07/27 12:20:04 Config File: productionConfigRunner.json
+2025/07/27 12:20:57 Rebuilding the app.
+2025/07/27 12:20:59 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:21:01 Launching Testing App
+2025/07/27 12:21:01 Environment options loaded: develop
+2025/07/27 12:21:17 Config File: productionConfigRunner.json
+2025/07/27 12:22:06 Rebuilding the app.
+2025/07/27 12:22:10 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:22:12 Launching Testing App
+2025/07/27 12:22:12 Environment options loaded: develop
+2025/07/27 12:22:27 Config File: productionConfigRunner.json
+2025/07/27 12:23:53 Rebuilding the app.
+2025/07/27 12:23:53 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:23:56 Launching Testing App
+2025/07/27 12:23:56 Environment options loaded: develop
+2025/07/27 12:24:02 Rebuilding the app.
+2025/07/27 12:24:04 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:24:05 Launching Testing App
+2025/07/27 12:24:05 Environment options loaded: develop
+2025/07/27 12:24:18 Config File: productionConfigRunner.json
+2025/07/27 12:24:52 Rebuilding the app.
+2025/07/27 12:24:54 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:24:56 Launching Testing App
+2025/07/27 12:24:56 Environment options loaded: develop
+2025/07/27 12:25:08 Config File: productionConfigRunner.json
+2025/07/27 12:25:18 Config File: productionConfigRunner.json
+2025/07/27 12:29:10 Rebuilding the app.
+2025/07/27 12:29:12 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:29:14 Launching Testing App
+2025/07/27 12:29:14 Environment options loaded: develop
+2025/07/27 12:29:20 Config File: productionConfigRunner.json
+2025/07/27 12:32:52 Rebuilding the app.
+2025/07/27 12:32:54 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:32:56 Launching Testing App
+2025/07/27 12:32:56 Environment options loaded: develop
+2025/07/27 12:33:02 Config File: productionConfigRunner.json
+2025/07/27 12:44:20 Rebuilding the app.
+2025/07/27 12:44:22 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:44:28 Launching Testing App
+2025/07/27 12:44:28 Environment options loaded: develop
+2025/07/27 12:44:41 Config File: productionConfigRunner.json
+2025/07/27 12:46:01 Rebuilding the app.
+2025/07/27 12:46:03 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:48:18 Launching Testing App
+2025/07/27 12:48:18 Environment options loaded: develop
+2025/07/27 12:48:21 Rebuilding the app.
+2025/07/27 12:48:21 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:48:23 Launching Testing App
+2025/07/27 12:48:23 Environment options loaded: develop
+2025/07/27 12:48:43 Config File: developConfigRunner.json
+2025/07/27 12:48:48 Config File: productionConfigRunner.json
+2025/07/27 12:58:10 Rebuilding the app.
+2025/07/27 12:58:12 Build String: Desktop app rebuilt successfully.
+2025/07/27 12:58:23 Launching Testing App
+2025/07/27 12:58:23 Environment options loaded: develop
+2025/07/27 12:58:38 Config File: productionConfigRunner.json
+2025/07/27 13:01:16 Rebuilding the app.
+2025/07/27 13:01:16 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:01:18 Launching Testing App
+2025/07/27 13:01:18 Environment options loaded: develop
+2025/07/27 13:01:33 Config File: productionConfigRunner.json
+2025/07/27 13:03:56 Config File: productionConfigRunner.json
+2025/07/27 13:06:34 Rebuilding the app.
+2025/07/27 13:06:36 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:06:38 Launching Testing App
+2025/07/27 13:06:38 Environment options loaded: develop
+2025/07/27 13:07:13 Config File: productionConfigRunner.json
+2025/07/27 13:10:41 Rebuilding the app.
+2025/07/27 13:10:43 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:10:45 Launching Testing App
+2025/07/27 13:10:45 Environment options loaded: develop
+2025/07/27 13:10:57 Config File: productionConfigRunner.json
+2025/07/27 13:15:57 Rebuilding the app.
+2025/07/27 13:15:59 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:16:01 Launching Testing App
+2025/07/27 13:16:01 Environment options loaded: develop
+2025/07/27 13:16:26 Config File: productionConfigRunner.json
+2025/07/27 13:19:28 Rebuilding the app.
+2025/07/27 13:19:30 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:19:31 Launching Testing App
+2025/07/27 13:19:31 Environment options loaded: develop
+2025/07/27 13:19:46 Config File: productionConfigRunner.json
+2025/07/27 13:23:13 Rebuilding the app.
+2025/07/27 13:23:16 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:23:17 Launching Testing App
+2025/07/27 13:23:17 Environment options loaded: develop
+2025/07/27 13:23:51 Rebuilding the app.
+2025/07/27 13:23:53 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:23:57 Launching Testing App
+2025/07/27 13:23:57 Environment options loaded: develop
+2025/07/27 13:24:10 Config File: productionConfigRunner.json
+2025/07/27 13:24:42 Config File: productionConfigRunner.json
+2025/07/27 13:29:40 Rebuilding the app.
+2025/07/27 13:29:42 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:29:44 Launching Testing App
+2025/07/27 13:29:44 Environment options loaded: develop
+2025/07/27 13:29:58 Config File: productionConfigRunner.json
+2025/07/27 13:32:59 Rebuilding the app.
+2025/07/27 13:33:01 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:33:03 Launching Testing App
+2025/07/27 13:33:03 Environment options loaded: develop
+2025/07/27 13:33:19 Config File: productionConfigRunner.json
+2025/07/27 13:43:35 Rebuilding the app.
+2025/07/27 13:43:37 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:43:38 Launching Testing App
+2025/07/27 13:43:38 Environment options loaded: develop
+2025/07/27 13:43:51 Config File: productionConfigRunner.json
+2025/07/27 13:49:13 Rebuilding the app.
+2025/07/27 13:49:15 Build String: Desktop app rebuilt successfully.
+2025/07/27 13:49:17 Launching Testing App
+2025/07/27 13:49:17 Environment options loaded: develop
+2025/07/27 13:49:26 Config File: developConfigRunner.json
+2025/07/27 13:49:30 Config File: productionConfigRunner.json
