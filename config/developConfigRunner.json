@@ -1,0 +1,12 @@
+{
+    "env": {
+        "name": "Develop",
+        "envInt": 0,
+        "envString": "develop",
+        "envLowers": "dev",
+        "envUppers": "DEV",
+        "apiEndpoint": "https://api.dev.com/",
+        "appUrl": "https://app.dev.com/",
+        "mobileAppID": "com.example.company"
+    }
+}

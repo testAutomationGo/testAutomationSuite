@@ -1,0 +1,2614 @@
+{
+    "uiArgs": {
+        "gmailCreds": "rnlrdsnnifqlwrmn",
+        "databaseConnectionStrings": [
+            {
+                "dbName": "DEV API",
+                "connectionString": "postgresql://pinatadevelop_mark:7yb4Rd7p9X8GZI5k@pinata-api-h3gfb41.c9azpy6gllhh.us-east-1.rds.amazonaws.com:5432/pinata-api",
+                "dbTables": [
+                    {
+                        "dbTableName": "user_region_permissions",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "allowed_replications",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "SequelizeMeta",
+                        "dbColumns": [
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "password_reset_tokens",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "token",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "date_expires",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "pin_jobs",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "date_queued",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "pin_attempts",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "last_pin_attempt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "keyvalues",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "host_nodes",
+                                "columnType": "ARRAY"
+                            },
+                            {
+                                "columnName": "job_owner",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "old_request_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "key_used",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "group_id",
+                                "columnType": "uuid"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "replications_update_jobs",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_ipfs_pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "new_pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "node_replications",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "replication_master_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "node_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "last_status_change",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "last_status_change_attempt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "streamable_pins",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "stream_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "deletedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "subpath",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "trusted_miners",
+                        "dbColumns": [
+                            {
+                                "columnName": "miner_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "reputation_score",
+                                "columnType": "numeric"
+                            },
+                            {
+                                "columnName": "reachable",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "price",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "stripe_customers",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "stripe_customer_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "payment_instrument",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "last_billing_calculation",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "created_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updated_at",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "content_previews",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "content_preview_storage_key",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "title",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "description",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "plans",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "nickname",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "type",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "stripe_product_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "stripe_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "price_cents",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "storage_limit_gb",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "storage_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "pin_total_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "pin_total_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "gateway_count_limit",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "gateway_count_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "bandwidth_limit_gb",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "bandwidth_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "image_resize_requests_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "image_resize_requests_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "link_shortening_requests_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "link_shortening_requests_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_stored_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_stored_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_streamed_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_streamed_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "req_count_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "req_count_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "order",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "seat_count_limit",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "seat_count_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "private_file_total_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "private_file_total_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "private_file_storage_limit_gb",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "private_file_storage_price_id",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "regions",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "network",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "snapshot_masters",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "total_pin_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "total_size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "snapshot_schedule_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "start_date",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "end_date",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "snapshot_schedules",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "schedule_start",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "schedule_frequency",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "disabled",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "fil_buys",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "amount_of_fil_bought",
+                                "columnType": "numeric"
+                            },
+                            {
+                                "columnName": "price_per_fil",
+                                "columnType": "numeric"
+                            },
+                            {
+                                "columnName": "date_bought",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "pinset_migrations",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "index_of_last_migrated",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "new_pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "replication_masters",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "desired_replication_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "current_replication_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "email_verification_tokens",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "token",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "gateway_default_contents",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "gateway_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "nodes",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "additional_connection_info",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "host",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "port",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "protocol",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "ipfs_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "pinning_operations",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "bytes_used",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "bytes_max",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "cache_only",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "server_region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "dedicated",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "hostname",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "auth",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_ipfs_pins",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "keyvalues",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "date_pinned",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "date_unpinned",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "origin_nodes",
+                                "columnType": "ARRAY"
+                            },
+                            {
+                                "columnName": "key_used",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "mime_type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "number_of_files",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "storage_type",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "group_id",
+                                "columnType": "uuid"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_ipfs_pin_replications",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_ipfs_pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "desired_replication_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "date_started",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "date_ended",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "stripe_subscription_items",
+                        "dbColumns": [
+                            {
+                                "columnName": "stripe_subscription_item_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "stripe_subscription_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "quantity",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "is_deleted",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "current_period_start",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "current_period_end",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "users",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "email",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "password_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "api_key",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "api_secret",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "email_verified",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "mfa_secret",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "external_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "feature_flags",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "markedForDelete",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "deletedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "plan_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "billing_started_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "billing_changed_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "current_plan_state",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "testing_column",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "next_plan_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "scheduledToBeCancelledAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "profile_picture",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "onboarding_started",
+                                "columnType": "boolean"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "scoped_keys",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "key",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "secret",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "max_uses",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "uses",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "scopes",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "revoked",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "snapshot_shards",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "shard_pin_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "shard_size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "root_cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "piece_cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "snapshot_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "error_message",
+                                "columnType": "text"
+                            },
+                            {
+                                "columnName": "miner_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "deal_id",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "retried",
+                                "columnType": "boolean"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "notifications",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "message",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "channel",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "seen_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "dbName": "DEV MANAGED",
+                "connectionString": "postgres://manageddevelop_mark:7yb4Rd7p9X8GZI5k@managed-db-develop.cluster-cendjc27qg1z.us-east-1.rds.amazonaws.com:5432/managed",
+                "dbTables": null
+            },
+            {
+                "dbName": "PROD API",
+                "connectionString": "postgresql://ben_read_only:I5RWeGhCnFPot4l964u87S@pinata-api-u5e3bn21-3.cendjc27qg1z.us-east-1.rds.amazonaws.com:5432/postgres",
+                "dbTables": [
+                    {
+                        "dbTableName": "snapshot_schedules",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "schedule_start",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "schedule_frequency",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "disabled",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "streamable_pins",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "stream_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "deletedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "subpath",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_ipfs_pin_metadata",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_ipfs_pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "keyvalues",
+                                "columnType": "jsonb"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "bad_contents",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "url",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "fil_buys",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "amount_of_fil_bought",
+                                "columnType": "numeric"
+                            },
+                            {
+                                "columnName": "price_per_fil",
+                                "columnType": "numeric"
+                            },
+                            {
+                                "columnName": "date_bought",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "plans",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "nickname",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "type",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "stripe_product_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "stripe_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "price_cents",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "storage_limit_gb",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "storage_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "pin_total_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "pin_total_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "gateway_count_limit",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "gateway_count_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "bandwidth_limit_gb",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "bandwidth_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "image_resize_requests_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "image_resize_requests_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "link_shortening_requests_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "link_shortening_requests_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "req_count_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "req_count_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_stored_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_stored_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_streamed_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "video_streaming_minutes_streamed_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "order",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "seat_count_limit",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "seat_count_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "private_file_total_limit",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "private_file_total_price_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "private_file_storage_limit_gb",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "private_file_storage_price_id",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "replications_update_jobs",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_ipfs_pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "new_pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "snapshot_masters",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "total_pin_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "total_size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "snapshot_schedule_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "start_date",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "end_date",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "stripe_customers",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "stripe_customer_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "payment_instrument",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "last_billing_calculation",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "created_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updated_at",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "content_previews",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "content_preview_storage_key",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "title",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "description",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "regions",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "network",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_region_permissions",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "allowed_replications",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "SequelizeMeta",
+                        "dbColumns": [
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "node_replications",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "replication_master_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "node_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "last_status_change",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "last_status_change_attempt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "pin_jobs",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "date_queued",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "pin_attempts",
+                                "columnType": "smallint"
+                            },
+                            {
+                                "columnName": "last_pin_attempt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "keyvalues",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "host_nodes",
+                                "columnType": "ARRAY"
+                            },
+                            {
+                                "columnName": "job_owner",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "old_request_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "key_used",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "group_id",
+                                "columnType": "uuid"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "pins",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "date_pinned",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "date_unpinned",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "keyvalues",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "origin_nodes",
+                                "columnType": "ARRAY"
+                            },
+                            {
+                                "columnName": "key_used",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "mime_type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "number_of_files",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "storage_type",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "group_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "mapped_cid",
+                                "columnType": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "pinset_migrations",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "index_of_last_migrated",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "new_pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "stripe_subscription_items",
+                        "dbColumns": [
+                            {
+                                "columnName": "stripe_subscription_item_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "stripe_subscription_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "quantity",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "current_period_start",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "current_period_end",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "is_deleted",
+                                "columnType": "boolean"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "users",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "email",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "password_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "api_key",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "api_secret",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "email_verified",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "pin_policy",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "mfa_secret",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "external_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "feature_flags",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "markedForDelete",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "deletedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "plan_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "billing_started_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "billing_changed_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "current_plan_state",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "next_plan_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "scheduledToBeCancelledAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "profile_picture",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "onboarding_started",
+                                "columnType": "boolean"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "cid_blacklist",
+                        "dbColumns": [
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "nodes",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "additional_connection_info",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "host",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "port",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "protocol",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "ipfs_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "pinning_operations",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "bytes_used",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "bytes_max",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "cache_only",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "server_region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "dedicated",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "hostname",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "auth",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "scoped_keys",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "key",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "secret",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "max_uses",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "uses",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "scopes",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "revoked",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_ipfs_pins",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "date_pinned",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "date_unpinned",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "keyvalues",
+                                "columnType": "jsonb"
+                            },
+                            {
+                                "columnName": "origin_nodes",
+                                "columnType": "ARRAY"
+                            },
+                            {
+                                "columnName": "key_used",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "mime_type",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "number_of_files",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "storage_type",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "group_id",
+                                "columnType": "uuid"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "cid_backups_v2",
+                        "dbColumns": [
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "node_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "backed_up",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "last_attempt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "error",
+                                "columnType": "character varying"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "snapshot_shards",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "shard_pin_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "shard_size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "root_cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "status",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "piece_cid",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "snapshot_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "error_message",
+                                "columnType": "text"
+                            },
+                            {
+                                "columnName": "miner_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "deal_id",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "retried",
+                                "columnType": "boolean"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_ipfs_pin_replications",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_ipfs_pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "desired_replication_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "date_started",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "date_ended",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "replication_masters",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "ipfs_pin_hash",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "region_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "size",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "desired_replication_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "current_replication_count",
+                                "columnType": "integer"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "password_reset_tokens",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "token",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "date_expires",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "coupons",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "name",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "plan_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "coupon_stripe_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "start_date",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "end_date",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "gateway_default_contents",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "pin_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "gateway_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "notifications",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "message",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "channel",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "seen_at",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "trusted_miners",
+                        "dbColumns": [
+                            {
+                                "columnName": "miner_id",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "reputation_score",
+                                "columnType": "numeric"
+                            },
+                            {
+                                "columnName": "reachable",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "price",
+                                "columnType": "bigint"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "user_coupons",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "coupon_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "coupon_used",
+                                "columnType": "boolean"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    },
+                    {
+                        "dbTableName": "email_verification_tokens",
+                        "dbColumns": [
+                            {
+                                "columnName": "id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "user_id",
+                                "columnType": "uuid"
+                            },
+                            {
+                                "columnName": "token",
+                                "columnType": "character varying"
+                            },
+                            {
+                                "columnName": "createdAt",
+                                "columnType": "timestamp with time zone"
+                            },
+                            {
+                                "columnName": "updatedAt",
+                                "columnType": "timestamp with time zone"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "dbName": "PROD API2",
+                "connectionString": "postgresql://pinataproduction_mark:jcGSM-Dn9THXk2Emx4q5yNBIsYgf8Jt6@pinata-api-prod-internal-replica.cxpxsakqbgci.us-east-2.rds.amazonaws.com:5432/postgres",
+                "dbTables": null
+            }
+        ]
+    }
+}

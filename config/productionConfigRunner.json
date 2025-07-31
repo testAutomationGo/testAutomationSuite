@@ -1,0 +1,13 @@
+{
+    "env": {
+        "name": "Production",
+        "envInt": 1,
+        "envString": "production",
+        "envLowers": "prd",
+        "envUppers": "PRD",
+        "apiEndpoint": "https://s3.amazonaws.com",
+        "appUrl": "https://app.com/",
+        "mobileAppID": "com.example.company",
+        "localVariableFile": "awsS3FeatureTest.txt"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "environments": [
+        "develop",
+        "production"
+    ],
+    "envOptions": [
+        "DEV",
+        "PRD"
+    ],
+    "testSectorsNames": [
+        "API Tests",
+        "UI Tests",
+        "Auth Tests",
+        "Full Scenario Tests"
+    ],
+    "SectorsCamelCase": [
+        "apiTests",
+        "uiTests",
+        "authTests",
+        "fullScenarioTests"
+    ],
+    "envConfigurationFiles": [
+        "developConfigRunner.json",
+        "productionConfigRunner.json"
+    ]
+}
