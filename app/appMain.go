@@ -36,6 +36,10 @@ func main() {
 	if _, err := os.Stat(appFolder); os.IsNotExist(err) {
 		os.Mkdir(appFolder, 0755)
 	}
+	testDataFolder := testingToolkit.CurrPath() + "/testData/appOutput"
+	if _, err := os.Stat(testDataFolder); os.IsNotExist(err) {
+		os.MkdirAll(testDataFolder, 0755)
+	}
 	logFolder := "app/logs"
 	if _, err := os.Stat(logFolder); os.IsNotExist(err) {
 		os.Mkdir(logFolder, 0755)

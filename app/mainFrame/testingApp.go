@@ -9,6 +9,7 @@ import (
 
 	"testAutomationSuiteGO/app/rebuildApp"
 	"testAutomationSuiteGO/app/shared"
+	"testAutomationSuiteGO/app/ui/apiUI"
 	"testAutomationSuiteGO/app/ui/featureTestsUI"
 	"testAutomationSuiteGO/app/ui/fileCreatorUI"
 	"testAutomationSuiteGO/app/ui/testsUI"
@@ -100,6 +101,9 @@ func AppMainMenu(myWindow fyne.Window, deps shared.AppDependencies) *fyne.MainMe
 		fyne.NewMenuItem("Updata QueryDB Schema", func() {
 			uiFunctions.UpdateDBSchemas(myWindow, deps)
 		}),
+		fyne.NewMenuItem("Search Folder For Term", func() {
+			ShowSearchFolderDialog(myWindow, deps)
+		}),
 	)
 
 	terminalMenu := fyne.NewMenu("Terminal",
@@ -138,11 +142,11 @@ func SetupTabs(deps shared.AppDependencies) {
 			{
 				name:    "Apps Navigations",
 				content: appsNavigation.AppsNavigationWindow(deps),
-			},
-			{
-				name:    "Api Requests",
-				content: apiUI.ApiRequestsWindow(deps),
-			},
+			},*/
+		{
+			name:    "Api Requests",
+			content: apiUI.ApiWindow(deps),
+		}, /*
 			{
 				name:    "Page Tools",
 				content: pageToolsUI.PageToolsWindow(deps),

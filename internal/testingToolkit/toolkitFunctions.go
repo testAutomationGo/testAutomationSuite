@@ -14,6 +14,71 @@ import (
 	"time"
 )
 
+func PrettyPrintJsonStringToFile(jsonString, filePath string) {
+	prettyJSON := PrettyPrintJSON(jsonString)
+	file, err := os.Create(filePath)
+	if err != nil {
+		fmt.Println("Error creating file: ", err.Error())
+		log.Println("Error creating file: ", err.Error())
+	}
+	defer file.Close()
+	_, err = file.WriteString(prettyJSON)
+	if err != nil {
+		fmt.Println("Error writing to file: ", err.Error())
+		log.Println("Error writing to file: ", err.Error())
+	}
+}
+
+func PrettyPrintJSON(jsonString string) string {
+	var result strings.Builder
+	indentLevel := 0
+	inQuotes := false
+	for i := range len(jsonString) {
+		char := jsonString[i]
+		switch char {
+		case '{', '[':
+			if !inQuotes {
+				result.WriteByte(char)
+				result.WriteByte('\n')
+				indentLevel++
+				result.WriteString(strings.Repeat("  ", indentLevel))
+			} else {
+				result.WriteByte(char)
+			}
+		case '}', ']':
+			if !inQuotes {
+				result.WriteByte('\n')
+				indentLevel--
+				result.WriteString(strings.Repeat("  ", indentLevel))
+				result.WriteByte(char)
+			} else {
+				result.WriteByte(char)
+			}
+		case ',':
+			result.WriteByte(char)
+			if !inQuotes {
+				result.WriteByte('\n')
+				result.WriteString(strings.Repeat("  ", indentLevel))
+			} else {
+				result.WriteByte(char)
+			}
+		case ':':
+			result.WriteByte(char)
+			if !inQuotes {
+				result.WriteByte(' ')
+			}
+		case '"':
+			result.WriteByte(char)
+			if i > 0 && jsonString[i-1] != '\\' {
+				inQuotes = !inQuotes
+			}
+		default:
+			result.WriteByte(char)
+		}
+	}
+	return result.String()
+}
+
 func GetENVVariable(fullFilePath, variableName string) string {
 	file, err := os.Open(fullFilePath)
 	if err != nil {
