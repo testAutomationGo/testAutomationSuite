@@ -136,9 +136,16 @@ func ShowPreferencesDialog(deps shared.AppDependencies) {
 
 	d := dialog.NewCustomConfirm("Preferences", "Save", "Cancel", dialogContent, func(b bool) {
 		if b {
-			deps.App.Preferences().SetString("email", emailEntry.Text)
-			deps.App.Preferences().SetString("password", passwordEntry.Text)
-			deps.App.Preferences().SetString("jwt", jwtEntry.Text)
+			if !(emailEntry.Text == "") {
+				deps.App.Preferences().SetString("email", emailEntry.Text)
+				deps.App.Preferences().SetString("userName", strings.Split(emailEntry.Text, "@")[0])
+			}
+			if !(passwordEntry.Text == "") {
+				deps.App.Preferences().SetString("password", passwordEntry.Text)
+			}
+			if !(jwtEntry.Text == "") {
+				deps.App.Preferences().SetString("jwt", jwtEntry.Text)
+			}
 		}
 	}, deps.MainWindow)
 

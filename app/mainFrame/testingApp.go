@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"testAutomationSuiteGO/app/rebuildApp"
 	"testAutomationSuiteGO/app/shared"
@@ -254,4 +256,72 @@ func topBar(deps shared.AppDependencies) fyne.CanvasObject {
 	)
 
 	return container.NewBorder(nil, nil, envContainer, userContainer)
+}
+
+func ShowSearchFolderDialog(myWindow fyne.Window, deps shared.AppDependencies) {
+	go func() {
+		folderPathEntry := widget.NewEntry()
+		folderPathEntry.SetPlaceHolder("Enter folder path")
+		searchTermEntry := widget.NewEntry()
+		searchTermEntry.SetPlaceHolder("Enter search term")
+		content := container.NewVBox(
+			widget.NewLabel("Enter the folder path to search:"),
+			folderPathEntry,
+			searchTermEntry,
+		)
+		d := dialog.NewCustomConfirm(
+			"Search Folder For Term",
+			"Search",
+			"Cancel",
+			content,
+			func(ok bool) {
+				if ok {
+					folderPath := folderPathEntry.Text
+					searchTerm := searchTermEntry.Text
+					matchingFiles, err := SearchFolderForTerm(folderPath, searchTerm)
+					if err != nil {
+						log.Println("Error searching folder:", err)
+						uiFunctions.NotificationPopUp("Error", "There was an error searching the folder. Please check the logs.", deps)
+						return
+					}
+					if len(matchingFiles) == 0 {
+						uiFunctions.NotificationPopUp("No Matches", "No files found containing the search term.", deps)
+						return
+					}
+					resultMessage := "Files containing the term:\n" + strings.Join(matchingFiles, "\n")
+					uiFunctions.NotificationPopUp("Search Results", resultMessage, deps)
+				} else {
+					return
+				}
+			},
+			myWindow,
+		)
+		d.Resize(fyne.NewSize(400, 200))
+		fyne.Do(func() {
+			d.Show()
+		})
+	}()
+}
+
+func SearchFolderForTerm(folderPath, searchTerm string) ([]string, error) {
+	var matchingFiles []string
+	err := filepath.Walk(folderPath, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if !info.IsDir() {
+			content, err := os.ReadFile(path)
+			if err != nil {
+				return err
+			}
+			if strings.Contains(string(content), searchTerm) {
+				matchingFiles = append(matchingFiles, path)
+			}
+		}
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return matchingFiles, nil
 }
