@@ -10,6 +10,7 @@ import (
 	"testAutomationSuiteGO/app/rebuildApp"
 	"testAutomationSuiteGO/app/shared"
 	"testAutomationSuiteGO/app/ui/apiUI"
+	"testAutomationSuiteGO/app/ui/code"
 	"testAutomationSuiteGO/app/ui/featureTestsUI"
 	"testAutomationSuiteGO/app/ui/fileCreatorUI"
 	"testAutomationSuiteGO/app/ui/testsUI"
@@ -159,6 +160,10 @@ func SetupTabs(deps shared.AppDependencies) {
 				name:    "Note Taker",
 				content: noteTakerUI.NoteTakerWindow(deps),
 			},*/
+		{
+			name:    "Code",
+			content: code.CodeWindow(deps),
+		},
 		{
 			name:    "File Creator",
 			content: fileCreatorUI.FileCreatorWindow(deps),

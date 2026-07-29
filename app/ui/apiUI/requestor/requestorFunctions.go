@@ -52,7 +52,7 @@ func RunApiRequest(appendToConsole func(string), requestType string, url string,
 		appendToConsole("Error running api request: " + err.Error())
 		return
 	}
-	if code != 200 || code != 201 {
+	if code != 200 && code != 201 {
 		appendToConsole("Error running api request. Response Code: " + fmt.Sprintf("%d", code) + "\nResponse: " + string(response))
 		return
 	}
