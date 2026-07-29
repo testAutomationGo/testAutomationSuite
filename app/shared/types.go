@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"log"
 	"os"
-	"strings"
 
 	"fyne.io/fyne/v2"
 )
@@ -42,6 +41,8 @@ var currentEnvironment string
 
 var EnvOptions []string
 
+var TestRunEnvVariables []string
+
 var appConfigFromFile AppConfiguration
 
 func SetEnvOptions() {
@@ -49,10 +50,6 @@ func SetEnvOptions() {
 	if err != nil {
 		log.Println("Error getting current working directory:", err)
 		return
-	}
-	if strings.Contains(workingDir, "/app") || strings.Contains(workingDir, "\\app") {
-		workingDir = strings.ReplaceAll(workingDir, "/app", "")
-		workingDir = strings.ReplaceAll(workingDir, "\\app", "")
 	}
 	appConfigFile := workingDir + "/config/appConfig.json"
 	jsonFile, err := os.Open(appConfigFile)
@@ -71,8 +68,8 @@ func SetEnvOptions() {
 		log.Println("No environment options found in appConfig.json")
 		return
 	}
-	log.Println("Environment options loaded:", appConfigFromFile.Envs[0])
-	SetCurrentEnvironment(appConfigFromFile.Envs[0])
+	log.Println("Environment options loaded:", appConfigFromFile.Envs[2])
+	SetCurrentEnvironment(appConfigFromFile.Options[2])
 }
 
 func GetAppConfigFromFile() AppConfiguration {
@@ -82,22 +79,37 @@ func GetAppConfigFromFile() AppConfiguration {
 type AppConfiguration struct {
 	Envs                  []string `json:"environments"`
 	Options               []string `json:"envOptions"`
-	TestSectorNames       []string `json:"testSectorsNames"`
-	TestSectorCamelCase   []string `json:"testSectorsCamelCase"`
+	RunTestsEnvVariables  []string `json:"runTestsEnvVariables"`
+	TestSectorNames       []string `json:"testSectorNames"`
 	EnvConfigurationFiles []string `json:"envConfigurationFiles"`
 }
 
 func SetCurrentEnvironment(env string) {
-	currentEnvironment = env
+	convertedEnv := EnvConverterForRunVariable(env)
+	log.Println("Setting current environment to:", convertedEnv)
+	currentEnvironment = convertedEnv
 }
 
 func GetCurrentEnvironment() string {
 	return currentEnvironment
 }
 
+func EnvConverterForRunVariable(envString string) string {
+	var envIntCheck int
+	envOptions := EnvOptions
+	for i := range envOptions {
+		if envOptions[i] == envString {
+			envIntCheck = i
+			break
+		}
+	}
+	envVariables := TestRunEnvVariables
+	return envVariables[envIntCheck]
+}
+
 func GetCurrentEnvInt() int {
-	for i, env := range EnvOptions {
-		if env == currentEnvironment {
+	for i := range TestRunEnvVariables {
+		if TestRunEnvVariables[i] == GetCurrentEnvironment() {
 			return i
 		}
 	}

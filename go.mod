@@ -1,6 +1,6 @@
 module testAutomationSuiteGO
 
-go 1.24.3
+go 1.26.5
 
 require (
 	fyne.io/fyne/v2 v2.5.4
@@ -14,7 +14,6 @@ require (
 	github.com/gorilla/mux v1.8.1
 	github.com/jung-kurt/gofpdf v1.16.2
 	github.com/playwright-community/playwright-go v0.4702.0
-	golang.org/x/crypto v0.39.0
 )
 
 require (

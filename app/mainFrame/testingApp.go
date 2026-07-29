@@ -7,7 +7,6 @@ import (
 
 	"testAutomationSuiteGO/app/rebuildApp"
 	"testAutomationSuiteGO/app/shared"
-	"testAutomationSuiteGO/app/ui/actionsUI"
 	"testAutomationSuiteGO/app/ui/featureTestsUI"
 	"testAutomationSuiteGO/app/ui/fileCreatorUI"
 	"testAutomationSuiteGO/app/ui/testsUI"
@@ -129,14 +128,34 @@ func SetupTabs(deps shared.AppDependencies) {
 		{
 			name:    "Run Test Sets",
 			content: testsUI.RunFullTestSets(deps),
-		},
+		}, /*
+			{
+				name:    "Test Cases",
+				content: testCasesUI.TestCasesWindow(deps),
+			},
+			{
+				name:    "Apps Navigations",
+				content: appsNavigation.AppsNavigationWindow(deps),
+			},
+			{
+				name:    "Api Requests",
+				content: apiUI.ApiRequestsWindow(deps),
+			},
+			{
+				name:    "Page Tools",
+				content: pageToolsUI.PageToolsWindow(deps),
+			},
+			{
+				name:    "Test Data Manager",
+				content: testDataManagerUI.TestDataManagerWindow(deps),
+			},
+			{
+				name:    "Note Taker",
+				content: noteTakerUI.NoteTakerWindow(deps),
+			},*/
 		{
 			name:    "File Creator",
 			content: fileCreatorUI.FileCreatorWindow(deps),
-		},
-		{
-			name:    "Actions",
-			content: actionsUI.ActionsWindow(deps),
 		},
 		/*{
 			name:    "Query DB",

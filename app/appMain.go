@@ -9,13 +9,16 @@ import (
 	"testAutomationSuiteGO/app/shared"
 	"testAutomationSuiteGO/app/ui/runParametersForUI"
 	"testAutomationSuiteGO/app/uiFunctions"
+	"testAutomationSuiteGO/internal/osVariables"
+	"testAutomationSuiteGO/internal/testRunParameters"
 	"testAutomationSuiteGO/internal/testingToolkit"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 )
 
-//Deploy Command: go build -ldflags "-H=windowsgui" -o TestingApp.exe appMain.go
+//Deploy Command: go build -ldflags "-H=windowsgui" -o Ares.exe appMain.go
+//appConfig.json is required for this application to run. It should be located in the config folder in the root of the project.
 
 type CustomApp struct {
 	fyne.App
@@ -29,11 +32,16 @@ func NewCustomApp() *CustomApp {
 func main() {
 	todaysDate := testingToolkit.CurrentDate()
 	todaysDate = strings.ReplaceAll(todaysDate, "-", "")
+	appFolder := "app"
+	if _, err := os.Stat(appFolder); os.IsNotExist(err) {
+		os.Mkdir(appFolder, 0755)
+	}
 	logFolder := "app/logs"
 	if _, err := os.Stat(logFolder); os.IsNotExist(err) {
 		os.Mkdir(logFolder, 0755)
 	}
-	file, err := os.OpenFile("app/logs/app"+todaysDate+".log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	logFile := "app/logs/app" + todaysDate + ".log"
+	file, err := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		log.Println("Failed to open log file:", err)
 	}
@@ -46,6 +54,9 @@ func main() {
 func TestingApp() {
 	runParametersForUI.SetGUIConfiguration()
 	shared.SetEnvOptions()
+	osVariables.SetLocalOSEnvVariables("1")
+	testRunParameters.SetConfigFile(shared.EnvConverterForRunVariable(shared.EnvOptions[2]))
+	testRunParameters.SetConfigRunnerJsonParameters()
 	uiFunctions.CreateAppFolderOutput()
 
 	myApp := NewCustomApp()
