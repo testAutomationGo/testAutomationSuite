@@ -198,7 +198,7 @@ func GetEnvStringFromInt(value int) string {
 	return environments[value]
 }
 
-var DBNames []string
+var DBNamesForConnectionStrings []string
 
 var ConnectionStrings []string
 
@@ -211,7 +211,7 @@ func SetDBNamesAndConnectionStrings() {
 		fmt.Println(err)
 	}
 	dbConnections := uiArgsRoot.UIArgs.DatabaseConnectionStrings
-	for i := 0; i < len(dbConnections); i++ {
+	for i := range dbConnections {
 		if dbConnections[i].DBTables == nil {
 			continue
 		}
@@ -219,15 +219,27 @@ func SetDBNamesAndConnectionStrings() {
 			continue
 		}
 		dbConnection := dbConnections[i]
-		DBNames = append(DBNames, dbConnection.DatabaseName)
+		DBNamesForConnectionStrings = append(DBNamesForConnectionStrings, dbConnection.DatabaseName)
 		ConnectionStrings = append(ConnectionStrings, dbConnection.ConnectionString)
 	}
 }
 
-func GetDBNames() []string {
-	return DBNames
+func GetDBNamesForConnectionStrings() []string {
+	return DBNamesForConnectionStrings
 }
 
 func GetConnectionStrings() []string {
 	return ConnectionStrings
+}
+
+var dbServers []string
+
+var dbNames [][]string
+
+func GetDatabaseServers() []string {
+	return dbServers
+}
+
+func GetDatabaseNames() [][]string {
+	return dbNames
 }
