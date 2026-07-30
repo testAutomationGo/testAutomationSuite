@@ -1,12 +1,15 @@
 {
     "environments": [
+        "local",
         "develop",
         "production"
     ],
     "envOptions": [
+        "LCL",
         "DEV",
         "PRD"
     ],
+    "defaultEnvironment": "production",
     "testSectorsNames": [
         "API Tests",
         "UI Tests",
@@ -20,6 +23,7 @@
         "fullScenarioTests"
     ],
     "envConfigurationFiles": [
+        "localConfigRunner.json",
         "developConfigRunner.json",
         "productionConfigRunner.json"
     ]

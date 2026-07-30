@@ -17,7 +17,7 @@ import (
 	"fyne.io/fyne/v2/app"
 )
 
-//Deploy Command: go build -ldflags "-H=windowsgui" -o Ares.exe appMain.go
+//Deploy Command: go build -ldflags "-H=windowsgui" -o Ares.exe app/appMain.go
 //appConfig.json is required for this application to run. It should be located in the config folder in the root of the project.
 
 type CustomApp struct {
@@ -59,7 +59,7 @@ func TestingApp() {
 	runParametersForUI.SetGUIConfiguration()
 	shared.SetEnvOptions()
 	osVariables.SetLocalOSEnvVariables("1")
-	testRunParameters.SetConfigFile(shared.EnvConverterForRunVariable(shared.EnvOptions[2]))
+	testRunParameters.SetConfigFile(shared.EnvConverterForRunVariable(shared.GetDefaultEnvOption()))
 	testRunParameters.SetConfigRunnerJsonParameters()
 	uiFunctions.CreateAppFolderOutput()
 

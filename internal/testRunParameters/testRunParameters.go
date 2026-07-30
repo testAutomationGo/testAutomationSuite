@@ -53,6 +53,11 @@ func SetConfigFile(env string) {
 		env = strings.ReplaceAll(env, "1", "")
 		runLocal = true
 	}
+	if env == "" {
+		//an empty env matches every file in the folder, leaving the last one loaded by accident.
+		log.Println("No environment given, config runner file not set")
+		return
+	}
 	configFolder := testingToolkit.CurrPath() + "/config"
 	files := testingToolkit.ListFilesInFolder(configFolder)
 	for _, file := range files {

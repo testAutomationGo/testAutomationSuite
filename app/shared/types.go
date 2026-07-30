@@ -68,8 +68,36 @@ func SetEnvOptions() {
 		log.Println("No environment options found in appConfig.json")
 		return
 	}
-	log.Println("Environment options loaded:", appConfigFromFile.Envs[2])
-	SetCurrentEnvironment(appConfigFromFile.Options[2])
+	TestRunEnvVariables = appConfigFromFile.Envs
+	if len(TestRunEnvVariables) != len(EnvOptions) {
+		log.Println("appConfig.json: environments and envOptions must hold the same number of entries")
+		return
+	}
+	startupEnv := defaultEnvIndex()
+	log.Println("Environment options loaded, starting in:", TestRunEnvVariables[startupEnv])
+	SetCurrentEnvironment(EnvOptions[startupEnv])
+}
+
+// defaultEnvIndex resolves the environment the app opens in from the
+// defaultEnvironment key in appConfig.json, falling back to the last
+// environment listed. Callers must ensure Envs is non-empty.
+func defaultEnvIndex() int {
+	for i := range appConfigFromFile.Envs {
+		if appConfigFromFile.Envs[i] == appConfigFromFile.DefaultEnvironment {
+			return i
+		}
+	}
+	log.Println("defaultEnvironment not matched in environments, using:", appConfigFromFile.Envs[len(appConfigFromFile.Envs)-1])
+	return len(appConfigFromFile.Envs) - 1
+}
+
+// GetDefaultEnvOption returns the env option code the app opens in, ex: PRD.
+func GetDefaultEnvOption() string {
+	if len(EnvOptions) == 0 || len(appConfigFromFile.Envs) == 0 {
+		log.Println("No environment options loaded, cannot resolve the startup environment")
+		return ""
+	}
+	return EnvOptions[defaultEnvIndex()]
 }
 
 func GetAppConfigFromFile() AppConfiguration {
@@ -79,6 +107,7 @@ func GetAppConfigFromFile() AppConfiguration {
 type AppConfiguration struct {
 	Envs                  []string `json:"environments"`
 	Options               []string `json:"envOptions"`
+	DefaultEnvironment    string   `json:"defaultEnvironment"`
 	RunTestsEnvVariables  []string `json:"runTestsEnvVariables"`
 	TestSectorNames       []string `json:"testSectorNames"`
 	EnvConfigurationFiles []string `json:"envConfigurationFiles"`
@@ -95,16 +124,15 @@ func GetCurrentEnvironment() string {
 }
 
 func EnvConverterForRunVariable(envString string) string {
-	var envIntCheck int
 	envOptions := EnvOptions
+	envVariables := TestRunEnvVariables
 	for i := range envOptions {
-		if envOptions[i] == envString {
-			envIntCheck = i
-			break
+		if envOptions[i] == envString && i < len(envVariables) {
+			return envVariables[i]
 		}
 	}
-	envVariables := TestRunEnvVariables
-	return envVariables[envIntCheck]
+	log.Println("No environment matches the option:", envString)
+	return ""
 }
 
 func GetCurrentEnvInt() int {
