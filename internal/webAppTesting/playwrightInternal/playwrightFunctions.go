@@ -2,7 +2,9 @@ package playwrightInternal
 
 import (
 	"fmt"
+	"math"
 	"os"
+	"strconv"
 	"strings"
 	"testAutomationSuiteGO/internal/logger"
 	"testAutomationSuiteGO/internal/testingToolkit"
@@ -29,6 +31,39 @@ func InitPlaywright() (*playwright.Playwright, playwright.Browser, playwright.Pa
 	page.SetDefaultTimeout(10000)
 	page.SetDefaultNavigationTimeout(10000)
 	return pw, browser, page, nil
+}
+
+type timeoutsUtil struct {
+	actionMs float64
+	navMs    float64
+}
+
+var profiles = map[string]timeoutsUtil{
+	"veryFast": {10000, 15000},
+	"fast":     {15000, 20000},
+	"normal":   {20000, 30000},
+	"slow":     {45000, 60000},
+	"verySlow": {60000, 75000},
+	"default":  {20000, 30000},
+}
+
+func scale(v float64) float64 {
+	s := 1.0
+	if env := os.Getenv("TIMEOUT_SCALE"); env != "" {
+		if f, err := strconv.ParseFloat(env, 64); err == nil && f > 0 {
+			s = f
+		}
+	}
+	return math.Max(0, v*s)
+}
+
+func SetTimeoutByProfile(page playwright.Page, profile string) {
+	p, ok := profiles[profile]
+	if !ok {
+		p = profiles["default"]
+	}
+	page.SetDefaultTimeout(scale(p.actionMs))
+	page.SetDefaultNavigationTimeout(scale(p.navMs))
 }
 
 func Run(tcNumber string) (*playwright.Playwright, error) {

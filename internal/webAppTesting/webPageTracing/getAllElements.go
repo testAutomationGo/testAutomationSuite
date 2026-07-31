@@ -20,16 +20,19 @@ type Element struct {
 	Visible    bool              `json:"visible"`
 }
 
-func PrintAllPageElementsToFile(page playwright.Page, tcNumber string) {
+func PrintAllPageElementsToFile(page playwright.Page, tcNumber string) error {
 	elements, err := GetAllElementsStructured(page)
 	if err != nil {
 		logger.Log("Error getting elements: "+err.Error(), tcNumber)
+		return err
 	}
 	jsonData, err := ElementsToJSON(elements)
 	if err != nil {
 		logger.Log("Error converting elements to JSON: "+err.Error(), tcNumber)
+		return err
 	}
 	testingToolkit.PrintStringToFile(jsonData, testRunParameters.GetResultsFolderPath()+"/elements.json")
+	return nil
 }
 
 func GetAllElementsStructured(page playwright.Page) ([]Element, error) {

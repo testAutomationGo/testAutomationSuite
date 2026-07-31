@@ -13,6 +13,7 @@ import (
 	"testAutomationSuiteGO/app/ui/code"
 	"testAutomationSuiteGO/app/ui/featureTestsUI"
 	"testAutomationSuiteGO/app/ui/fileCreatorUI"
+	"testAutomationSuiteGO/app/ui/pageToolsUI"
 	"testAutomationSuiteGO/app/ui/testsUI"
 	"testAutomationSuiteGO/app/uiFunctions"
 	"testAutomationSuiteGO/internal/testingToolkit"
@@ -163,6 +164,10 @@ func SetupTabs(deps shared.AppDependencies) {
 		{
 			name:    "Code",
 			content: code.CodeWindow(deps),
+		},
+		{
+			name:    "Page Tools",
+			content: pageToolsUI.PageToolsWindow(deps),
 		},
 		{
 			name:    "File Creator",
